@@ -1,0 +1,122 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-vermelho1: #FF6347;
+    --color-laranja1: #FFDAB9;
+    --color-laranja2: #FFA500;
+    --color-verde1: #98FF98;
+    --color-verde2: #808000;
+    --color-amarelo1: #FFD700;
+    --color-cinza1: #708090;
+    --color-bege1: #F5F5DC;
+    --color-marrom2: #9e5018;
+    --color-marrom1: #D2691E;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--color-marrom1);
+    color: var(--color-white);
+}
+
+.logo_header{
+    width: 60px;
+}
+
+.header,
+.navigation_header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header{
+    background-color: var(--color-laranja2);
+    box-shadow: 1px 1px 4px var(--color-marrom2);
+    height: 4.5em;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.navigation_header{
+    gap: 3em;
+    z-index: 2;
+}
+
+.navigation_header a{
+    text-decoration: none;
+    color: var(--color-marrom2);
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+.navigation_header a:hover{
+    color: var(--color-white);
+}
+
+.content{
+    text-align: center;
+    padding-top: 5em;
+    height: 100vh;
+    transition: 1s;
+}
+
+.btn_header{
+    background-color: transparent;
+    border: none;
+    color: var(--color-marrom2);
+    cursor: pointer;
+    display: none;
+}
+
+.linhas{
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3em;
+}
+
+.linhas_p2{
+    padding: 2% 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3em;
+}
+
+.linhas_sp{
+    padding: 4vw 0 0 36%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3em;
+}
+
+@media screen and (max-width: 768px){
+    .btn_header{
+        display: block;
+    }
+
+    .navigation_header{
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        background-color: var(--color-laranja2);
+        height: 100%;
+        width: 35vw;
+        padding: 1em;
+        animation-duration: 1s;
+        margin-left: -100vw;
+    }
+}
+
+@keyframes showSidebar{
+    from {margin-left: -100vw;}
+    top {margin-left: -10vw;}
+}
