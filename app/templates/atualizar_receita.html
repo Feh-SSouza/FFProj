@@ -1,0 +1,61 @@
+{% extends "base_header.html" %}
+{% block conteudo %}
+    <section class="container-xl">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                    <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Cadastro de usuarios</h3>
+                    </div><!-- /.box-header -->
+                    <!-- form start -->
+                    <form class="" action="{{url_for('atualizar_receita', id=atualiza.id)}}" method="POST" >
+                        <div class="">
+                                       
+                            
+                            <div class="">
+                                <label class="form-label">Nome</label>
+                                <input class="form-control" placeholder="" type="text" name="nome" id="nome1" value="{{atualiza.nome}}">
+                            </div>
+                            <div class="">
+                                <label class="form-label">Descrição</label>
+                                <input class="form-control" placeholder="" type="text" name="descricao" id="desc1" value="{{atualiza.descricao}}">
+                            </div>
+                            <div class="">
+                                <label class="form-label">Ingredientes</label>
+                                <input class="form-control" placeholder="" type="text" name="ingredientes" id="ingredientes1" value="{{atualiza.ingredientes}}">
+                            </div>
+                            <div class="">
+                                <label class="form-label">Utensilios</label>
+                                <input class="form-control" placeholder="" type="text" name="utensilios" id="utensilios1" value="{{atualiza.utensilios}}">
+                            </div>
+                            <div class="">
+                                <label class="form-label">Tempo</label>
+                                <input class="form-control" placeholder="" type="text" name="tempo" id="tempo1" value="{{atualiza.tempo}}">
+                            </div>
+                            <div class="">
+                                <label class="" >Nota</label>
+                                <input class="form-control" type="number" name="nota" value="{{atualiza.nota}}">
+                            </div>
+                            <div class="">
+                                <label class="form-label">Dificuldade</label>
+                                <input class="form-control"  type="number" name="dificuldade" value="{{atualiza.dificuldade}}">
+                            </div>   
+                            <div class="">
+                                <br>
+                            </div>                             
+                            <div class="">
+                                <button class="btn btn-primary" type="submit">Atualizar</button>
+                            </div>
+                                    
+                        </div>
+                
+                    </form>                 
+                </div><!-- /.box -->         
+            </div><!--/.col (left) -->
+            <!-- right column -->        
+        </div>   <!-- /.row -->
+    </section><!-- /.content -->
+
+{% endblock %}
