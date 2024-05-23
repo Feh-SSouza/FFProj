@@ -1,0 +1,57 @@
+{% extends "base_header.html" %}
+{% block conteudo %}
+<section class="">
+    <div class="">
+      <div class="">
+        <div class="">
+          <h3 class="">Cadastro de usuários</h3>
+        </div><!-- /.box-header -->
+        <div class="">
+          <div class="">
+            {% with messages = get_flashed_messages()%}
+              {% if messages %}
+                  {% for message in messages %}
+                  <div class="alert alert-success">
+                    {{message}}                                          
+                  </div>                                 
+                  {% endfor %}
+               {% endif %}
+            {% endwith %}
+          </div>      
+            <div class="">
+              <table id="example" class="" style="width:50%">
+                <tbody>
+                  {% for user in usuario %}
+
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="../../static/imagens/Logo2P.jpg" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <a href="{{url_for('excluir_usuario',id=user.id)}}"><span class="label label-danger"><i class="fa-solid fa-eraser"></i> Excluir</span></a>
+                                <a href="/atualizaruser/{{user.id}}"><span class="label label-success"><i class="fa-solid fa-pencil"></i> Alterar</span></a>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{user.nome}}</h5>
+                                    <br>
+                                    <p class="card-text">{{user.email}}</p>
+                                    <br>
+                                    <p class="card-text"><small class="text-body-secondary">ID: {{user.id}}</small></p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                  {% endfor %}
+                 
+                             
+                </tbody>
+            </table>
+            <a href="{{url_for('cad_usuario')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cadastrar</a>
+         </div>      
+      </div>        
+    </div>
+</section>
+{% endblock %}
